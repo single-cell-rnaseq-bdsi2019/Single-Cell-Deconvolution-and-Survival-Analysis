@@ -23,3 +23,20 @@ Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median surviv
 - Mixture (bulk):  Expression level of m genes in n tissue samples
 ## Output:
 Cell type composition in the n tissue samples
+
+# Reference(MLA)
+Azizi, Elham, et al. "Single-cell map of diverse immune phenotypes in the breast tumor microenvironment." Cell 174.5 (2018): 1293-1308.
+
+Newman, Aaron M., et al. "Robust enumeration of cell subsets from tissue expression profiles." Nature methods 12.5 (2015): 453.
+
+Frishberg, Amit, et al. "Cell composition analysis of bulk genomics using single-cell data." Nature methods 16.4 (2019): 327.
+
+Gong, Ting, and Joseph D. Szustakowski. "DeconRNASeq: a statistical framework for deconvolution of heterogeneous tissue samples based on mRNA-Seq data." Bioinformatics29.8 (2013): 1083-1085.
+
+Racle, Julien, et al. "Simultaneous enumeration of cancer and immune cell types from bulk tumor gene expression data." Elife 6 (2017): e26476.
+
+Wang, Xuran, et al. "Bulk tissue cell type deconvolution with multi-subject single-cell expression reference." Nature communications 10.1 (2019): 380.
+
+Li, Bo, et al. "Comprehensive analyses of tumor immunity: implications for cancer immunotherapy." Genome biology 17.1 (2016): 174.
+
+Aran, Dvir, Zicheng Hu, and Atul J. Butte. "xCell: digitally portraying the tissue cellular heterogeneity landscape." Genome biology 18.1 (2017): 220.
