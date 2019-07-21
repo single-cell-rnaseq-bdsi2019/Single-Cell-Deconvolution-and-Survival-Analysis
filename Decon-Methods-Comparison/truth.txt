@@ -1,2 +1,0 @@
-"astrocytes" "endothelial" "GABAergic_interneurons" "glutamatergic_neurons_from_the_PFC" "granule_neurons_from_the_hip_dentate_gyrus_region" "microglia" "neuronal_stem_cells" "oligodendrocytes" "OPC" "pyramidal_neurons_from_th_hip_CA_region" "label"
-"1" 0.127581367372853 0.0169752055069171 0.055002339103121 0.227293991846555 0.059613713827441 0.0259974604023257 0.0134331350664974 0.198155450110272 0.0457127581367373 0.0779255496892334 "truth"
