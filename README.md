@@ -3,23 +3,23 @@ Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median surviv
 
 # Background:
 
-## Glioblastoma multiforme (GBM) is the most aggressive type of brain cancer with a median survival time of 15-16 months and an average of 14k cases in the U.S. each year. 
-## Traditional treatments (surgery, radiation, and chemotherapy) and on-going research concentrate on understanding and estimating patient survival. 
-## Immune cell presence in tumors has been found to be associated with patient survival, which can be estimated with the application of RNA deconvolution methods.  
+- Glioblastoma multiforme (GBM) is the most aggressive type of brain cancer with a median survival time of 15-16 months and an average of 14k cases in the U.S. each year. 
+- Traditional treatments (surgery, radiation, and chemotherapy) and on-going research concentrate on understanding and estimating patient survival. 
+- Immune cell presence in tumors has been found to be associated with patient survival, which can be estimated with the application of RNA deconvolution methods.  
 
 
 # RNA sequencing methods:
 ## Single Cell RNA Sequencing: 
-### Provides the gene expression profile of individual cells
-### Reveals expression variability of different cell types and subpopulations
+- Provides the gene expression profile of individual cells
+- Reveals expression variability of different cell types and subpopulations
 ## Bulk RNA Sequencing:
-### Provides the average gene expression level of all cells in a tissue 
-### Masks the cell type heterogeneity in the tissue
-### Relatively cheap 
+- Provides the average gene expression level of all cells in a tissue 
+- Masks the cell type heterogeneity in the tissue
+- Relatively cheap 
 
 # General outline for deconvolution:
 ## Input:
-### Gene signatures (single cell): Expression level of m genes in k cells
-### Mixture (bulk):  Expression level of m genes in n tissue samples
+- Gene signatures (single cell): Expression level of m genes in k cells
+- Mixture (bulk):  Expression level of m genes in n tissue samples
 # Output:
-## Cell type composition in the n tissue samples
+Cell type composition in the n tissue samples
