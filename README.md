@@ -21,5 +21,5 @@ Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median surviv
 ## Input:
 - Gene signatures (single cell): Expression level of m genes in k cells
 - Mixture (bulk):  Expression level of m genes in n tissue samples
-# Output:
+## Output:
 Cell type composition in the n tissue samples
