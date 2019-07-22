@@ -27,7 +27,7 @@ Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median surviv
 ## Output:
 Cell type composition in the n tissue samples
 
-# Reference(MLA)
+# References(MLA)
 Azizi, Elham, et al. "Single-cell map of diverse immune phenotypes in the breast tumor microenvironment." Cell 174.5 (2018): 1293-1308.
 
 Newman, Aaron M., et al. "Robust enumeration of cell subsets from tissue expression profiles." Nature methods 12.5 (2015): 453.
