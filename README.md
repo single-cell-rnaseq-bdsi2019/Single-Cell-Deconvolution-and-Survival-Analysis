@@ -28,7 +28,8 @@ Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median surviv
 ## Output:
 - Cell type composition in the n tissue samples
 
-# References:
+
+## References:
 Aran, Dvir, Zicheng Hu, and Atul J. Butte. "xCell: digitally portraying the tissue cellular heterogeneity landscape." Genome biology 18.1 (2017): 220.
 
 Azizi, Elham, et al. "Single-cell map of diverse immune phenotypes in the breast tumor microenvironment." Cell 174.5 (2018): 1293-1308.
@@ -47,4 +48,3 @@ Wang, Xuran, et al. "Bulk tissue cell type deconvolution with multi-subject sing
 
 ## Acknowledgements: 
 Xiang Zhou, Ph.D., Matthew Zawistowski, Ph.D., Shiquan Sun, Ph.D., Sarah Gagliano Taliun, Ph.D., Brooke Wolford, Ph.D. candidate, Bhramar Mukherjee, Ph.D., Dan Barker, Big Data Summer Institute faculty and staff
-
