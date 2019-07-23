@@ -45,6 +45,6 @@ Racle, Julien, et al. "Simultaneous enumeration of cancer and immune cell types 
 
 Wang, Xuran, et al. "Bulk tissue cell type deconvolution with multi-subject single-cell expression reference." Nature communications 10.1 (2019): 380.
 
-# Acknowledgements: 
+## Acknowledgements: 
 Xiang Zhou, Ph.D., Matthew Zawistowski, Ph.D., Shiquan Sun, Ph.D., Sarah Gagliano Taliun, Ph.D., Brooke Wolford, Ph.D. candidate, Bhramar Mukherjee, Ph.D., Dan Barker, Big Data Summer Institute faculty and staff
 
