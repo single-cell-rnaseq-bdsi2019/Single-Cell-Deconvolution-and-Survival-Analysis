@@ -26,7 +26,7 @@ Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median surviv
 - Gene signatures (single cell): Expression level of m genes in k cells
 - Mixture (bulk):  Expression level of m genes in n tissue samples
 ## Output:
-Cell type composition in the n tissue samples
+- Cell type composition in the n tissue samples
 
 # References(MLA)
 Aran, Dvir, Zicheng Hu, and Atul J. Butte. "xCell: digitally portraying the tissue cellular heterogeneity landscape." Genome biology 18.1 (2017): 220.
