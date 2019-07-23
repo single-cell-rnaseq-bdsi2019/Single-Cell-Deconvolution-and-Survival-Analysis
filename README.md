@@ -1,6 +1,10 @@
 # Single Cell Deconvolution and Survival Analysis
 Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median survival time of 15-16 months.  Traditional treatment for the average 14k cases of GBM per year includes surgery, radiation, and chemotherapy focused on extending survival time.  Survival time may be associated with increased immune cell presence in these solid tumors (requires citation).  Deconvolution of bulk RNA data from GBM tumors by immune single cell RNA profiles to determine immune cell content may provide a glimpse into estimating patient survival.
 
+## Related Links:
+- https://github.com/xzhoulab/DECComparison/tree/master/data_download
+- https://github.com/bnwolford/BDSI
+
 
 # Background:
 
@@ -26,13 +30,7 @@ Glioblastoma multiforme (GBM) is an aggressive brain cancer with a median surviv
 - Cell type composition in the n tissue samples
 
 
-
-## related links:
-- https://github.com/xzhoulab/DECComparison/tree/master/data_download
-- https://github.com/bnwolford/BDSI
-
-
-## References:
+# References:
 Aran, Dvir, Zicheng Hu, and Atul J. Butte. "xCell: digitally portraying the tissue cellular heterogeneity landscape." Genome biology 18.1 (2017): 220.
 
 Azizi, Elham, et al. "Single-cell map of diverse immune phenotypes in the breast tumor microenvironment." Cell 174.5 (2018): 1293-1308.
@@ -49,5 +47,5 @@ Racle, Julien, et al. "Simultaneous enumeration of cancer and immune cell types 
 
 Wang, Xuran, et al. "Bulk tissue cell type deconvolution with multi-subject single-cell expression reference." Nature communications 10.1 (2019): 380.
 
-## Acknowledgements: 
+# Acknowledgements: 
 Xiang Zhou, Ph.D., Matthew Zawistowski, Ph.D., Shiquan Sun, Ph.D., Sarah Gagliano Taliun, Ph.D., Brooke Wolford, Ph.D. candidate, Bhramar Mukherjee, Ph.D., Dan Barker, Big Data Summer Institute faculty and staff
