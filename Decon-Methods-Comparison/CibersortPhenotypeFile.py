@@ -1,27 +1,26 @@
-#!/usr/bin/env python
-
-
 import pandas as pd
 import csv
 import math
 
-
-# # Making of cibersort phenotype class matrix
-
-# In[2]:
-
-
-clusterNamePath = '/home/stephen/Desktop/clusterName.xlsx'
+#####################################################################
+# Making of cibersort phenotype class matrix
+#####################################################################
+'''
+Read cluster name, genes, and single cell survival data
+'''
+clusterNamePath = '/home/stephen/Desktop/clusterName.xlsx' # 
 clusterNameDF = pd.read_excel(clusterNamePath, header=None)
 
-clusterGenePath = '/home/stephen/Desktop/clusterGene.xlsx'
+clusterGenePath = '/home/stephen/Desktop/clusterGene.xlsx' # 
 clusterGeneDF = pd.read_excel(clusterGenePath, header=None)
 
+sc_counts_path = '/home/stephen/survival_sc_counts.txt'# 
+sc_counts_matrix = pd.read_csv(sc_counts_path, sep=" ")
 
-# In[3]:
-
-
-cellTypes = clusterNameDF[1].tolist()
+'''
+Rename cell types
+'''
+cellTypes = clusterNameDF[1].tolist() # list of cell types
 
 cellNewTypesDict = {
     'B:':'B',
@@ -51,19 +50,16 @@ cellNewTypesDict = {
     'pDC:':'DENDRITIC'
     }
 
-
-renamedCellTypes = []
-
-for cellType in cellTypes:
+renamedCellTypes = [] # ordered list of celltypes
+for cellType in cellTypes: 
     try:
         renamedCellTypes.append(cellNewTypesDict[cellType])
     except:
         renamedCellTypes.append(cellType)
 
-
-# In[4]:
-
-
+# filter and create a cluster name dictionary:
+#   key: cluster
+#   value: cell type
 cluster = 1
 clusterNameDict = {}
 for cellName in renamedCellTypes:
@@ -74,77 +70,47 @@ for cellName in renamedCellTypes:
     cluster += 1
 
 
-# In[5]:
-
-
-geneNames = clusterGeneDF[0].tolist()
-geneCluster = clusterGeneDF[1].tolist()
-
-geneID_cellType_Dict = {}
-
-position = 0
-for geneID in geneNames:
-    try:
-        geneID_cellType_Dict.update({geneID:clusterNameDict[(geneCluster[position])]})
-    except:
-        pass
-    position += 1
-
-
-# In[6]:
-
-
-geneNames = clusterGeneDF[0].tolist()
-geneCluster = clusterGeneDF[1].tolist()
-
-
-geneID_cellType_Dict = {}
-
-position = 0
-for geneID in geneNames:
-    try:
-        geneID_cellType_Dict.update({geneID:clusterNameDict[(geneCluster[position])]})
-    except:
-        pass
-    position += 1
-
-
-# In[7]:
-
-
 #####################################################################
+'''
+Output: geneID_cellType_Dict
+    A dictionary of key: geneID
+                    value: Cell type
+'''
+geneNames = clusterGeneDF[0].tolist()
+geneCluster = clusterGeneDF[1].tolist()
 
-sc_counts_path = '/home/stephen/survival_sc_counts_reduced.txt'
-#sc_counts_path = '/home/stephen/survival_sc_counts.txt'
+geneID_cellType_Dict = {}
 
+position = 0
+for geneID in geneNames:
+    try:
+        geneID_cellType_Dict.update({geneID:clusterNameDict[(geneCluster[position])]})
+    except:
+        pass
+    position += 1
 
-sc_counts_matrix = pd.read_csv(sc_counts_path, sep=" ")
-
-
-# In[10]:
-
-
-
+    
+#####################################################################
+# Making of max genes matrix
+#####################################################################
+'''
+immunceCellGenes and nonImmuneCellGenes in a list
+'''
 immuneCellGenes = list(geneID_cellType_Dict.keys())
 nonImmuneCellGenes = [geneName for geneName in geneNames if geneName not in immuneCellGenes]
 nonImmuneCellGenes_iterative = nonImmuneCellGenes[:]
 
-
+'''
+Remove non-immune cell types 
+'''
 for gene in nonImmuneCellGenes_iterative:
     if gene not in sc_counts_matrix.index.values:
         nonImmuneCellGenes.remove(gene)
-
-
-# In[11]:
-
-
+        
 sc_counts_matrix_filtered1 = sc_counts_matrix.drop(nonImmuneCellGenes)
-
 rowNames = sc_counts_matrix_filtered1.index.values.tolist()
 
-
 dropping = []
-
 for rowName in rowNames:
     if rowName in nonImmuneCellGenes:
         dropping.append(rowName)
@@ -154,27 +120,22 @@ for rowName in rowNames:
 sc_counts_matrix_filtered2 = sc_counts_matrix_filtered1.drop(dropping)
 
 
-# In[12]:
-
-
 '''
 changing row names:
     gapminder.rename(index={0:'zero',1:'one'}, inplace=True)
     print(gapminder.head(4))
 '''
-
-### error in the renaming where if not in dictionary, not renamed
 sc_counts_matrix_filtered = sc_counts_matrix_filtered2.rename(index={rowName:geneID_cellType_Dict[rowName] for rowName in rowNames if rowName in geneID_cellType_Dict.keys()})
 
 
-# In[13]:
-
-
+'''
+Preparing data for phenotype matrix
+    make matrix with row and celltype items:
+        [1, 'MONOCYTE']
+'''
 max_cell_type_list = []
 
-
 columnNumber = 1
-
 for column in sc_counts_matrix_filtered.columns.values.tolist():
     if sc_counts_matrix[column].max() == 0:
         max_cell_type_list.append([columnNumber, 0]) # problem when all values in column is 0
@@ -183,9 +144,12 @@ for column in sc_counts_matrix_filtered.columns.values.tolist():
     columnNumber += 1
 
 
-# In[14]:
-
-
+'''
+Generating and saving phenotype matrix where rows are samples and values are as follows:
+    0: ignore comparison
+    1: membership in class
+    2: class that sample will be compared against
+'''
 cellTypeRowOrder = [
     'B', 
     'DENDRITIC', 
@@ -199,6 +163,7 @@ cellTypeRowOrder = [
     'NK'
 ]
 
+
 totalColumnsValues = []
 
 for column_cellType in max_cell_type_list:
@@ -208,12 +173,7 @@ for column_cellType in max_cell_type_list:
     except:
         pass
     totalColumnsValues.append([column_cellType[0], columnsValues])
-           
-
-
-# In[15]:
-
-
+   
 
 phenotype_classes = pd.DataFrame({
     'B':[], 
@@ -231,11 +191,6 @@ phenotype_classes = pd.DataFrame({
 for column in totalColumnsValues:
     phenotype_classes[column[0]] = column[1]
 
-
-# In[17]:
-
-
-
+    
+# saving GBM phenotype class file
 phenotype_classes.to_csv('GBM_phenotype_class.txt', header=False, index=True, sep='\t', mode='a')
-print('done')
-
