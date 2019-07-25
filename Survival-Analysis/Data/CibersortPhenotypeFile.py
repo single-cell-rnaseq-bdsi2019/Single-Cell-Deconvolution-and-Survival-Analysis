@@ -8,13 +8,13 @@ import math
 '''
 Read cluster name, genes, and single cell survival data
 '''
-clusterNamePath = '/home/stephen/Desktop/clusterName.xlsx' # 
+clusterNamePath = '/home/stephen/Desktop/clusterName.xlsx' 
 clusterNameDF = pd.read_excel(clusterNamePath, header=None)
 
-clusterGenePath = '/home/stephen/Desktop/clusterGene.xlsx' # 
+clusterGenePath = '/home/stephen/Desktop/clusterGene.xlsx' 
 clusterGeneDF = pd.read_excel(clusterGenePath, header=None)
 
-sc_counts_path = '/home/stephen/survival_sc_counts.txt'# 
+sc_counts_path = '/home/stephen/survival_sc_counts.txt'
 sc_counts_matrix = pd.read_csv(sc_counts_path, sep=" ")
 
 '''
