@@ -1,11 +1,12 @@
 import pandas as pd
 import csv
-import math
+    import math
 
 #####################################################################
 # Making of cibersort phenotype class matrix
 #   Cluster and Gene data from study:
-#   Azizi, Elham, et al. "Single-cell map of diverse immune phenotypes in the breast tumor microenvironment." Cell 174.5 (2018): 1293-1308.
+#       Azizi, Elham, et al. "Single-cell map of diverse immune phenotypes in the breast tumor microenvironment." 
+#           Cell 174.5 (2018): 1293-1308.
 #####################################################################
 '''
 Read cluster name, genes, and single cell survival data
