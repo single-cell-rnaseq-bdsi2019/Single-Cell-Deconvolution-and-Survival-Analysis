@@ -4,6 +4,8 @@ import math
 
 #####################################################################
 # Making of cibersort phenotype class matrix
+#   Cluster and Gene data from study:
+#   Azizi, Elham, et al. "Single-cell map of diverse immune phenotypes in the breast tumor microenvironment." Cell 174.5 (2018): 1293-1308.
 #####################################################################
 '''
 Read cluster name, genes, and single cell survival data
@@ -14,7 +16,7 @@ clusterNameDF = pd.read_excel(clusterNamePath, header=None)
 clusterGenePath = '/home/stephen/Desktop/clusterGene.xlsx' 
 clusterGeneDF = pd.read_excel(clusterGenePath, header=None)
 
-sc_counts_path = '/home/stephen/survival_sc_counts.txt'
+sc_counts_path = '/home/stephen/survival_sc_counts.txt' # single cell GBM data
 sc_counts_matrix = pd.read_csv(sc_counts_path, sep=" ")
 
 '''
